@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaroha School of Music</title>
+    <link rel="icon" href="logo.jpeg" type="image/icon type">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- Animated Graffiti Background -->
+    <div class="graffiti-bg"></div>
+    <div class="graffiti-notes" id="graffiti"></div>
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <img src="logo.jpeg" alt="Aaroha Logo">
+            <h1> <span>Aaroh School of Music</span></h1>
+        </div>
+        
+        <nav id="nav">
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+
+            </ul>
+        </nav>
+        
+        <button class="cta-button" id="header-cta">
+            <i class="fas fa-music"></i> Request Free Session
+        </button>
+        
+        <div class="mobile-menu" id="mobile-menu">
+            <i class="session.html"></i>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Home Section -->
+        <section id="home">
+            <div class="video-container">
+                <video autoplay muted loop>
+                    <source src="bg.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <div class="hero-content">
+                <h2>Discover Your <span>Musical Journey</span></h2>
+                <p>"Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything." Find your musical voice with us.</p>
+                <div class="hero-cta">
+                    <button class="cta-button" id="hero-cta">
+                        <i class="fas fa-music"></i> Request a Free Session
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about">
+            <div class="section-header fade-up">
+                <h2>About Us</h2>
+                <p>Learn about Aaroha School of Music and the musical journey of its founder, Anurag Naik.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image fade-up">
+                    <img src="anurag.jpg" alt="Anurag Naik">
+                    <div class="image-border"></div>
+                </div>
+                
+                <div class="about-text fade-up">
+                    <h3>Anurag Naik - Founder & Music Director</h3>
+                    <p>With over 15 years of experience in music education and performance, Anurag Naik established Aaroha School of Music with a vision to inspire and nurture musical talent across all age groups.</p>
+                    <p>Trained in both Western and Indian classical traditions, Anurag holds a Master's degree in Music Performance and has collaborated with renowned artists across the globe. His unique teaching methodology combines traditional techniques with modern approaches to create a holistic learning experience.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h4>15+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>500+</h4>
+                            <p>Students Trained</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>50+</h4>
+                            <p>Professional Musicians</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Courses Section -->
+        <section id="courses">
+            <div class="section-header fade-up">
+                <h2>Our Courses</h2>
+                <p>Explore our comprehensive music programs designed for all skill levels and age groups.</p>
+            </div>
+            
+            <div class="courses-container">
+                <div class="course-card fade-up">
+                    <div class="course-image">
+                        <img src="/images/live class.jpeg" alt="Course Image">
+                    </div>
+                    <div class="course-content">
+                        <h3>Beginner</h3>
+                        <p>Start your musical journey with the fundamentals of music theory, basic techniques, and simple songs perfect for those with no prior experience.</p>
+                        <div class="course-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i> 12 Weeks
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-user"></i> 1-on-1
+                            </div>
+                        </div>
+                        <button class="course-btn" onclick="window.location.href='beginner-level.html'">Know More</button>
+                    </div>
+                </div>
+
+                <div class="course-card fade-up">
+                    <div class="course-image">
+                        <img src="/images/group class.jpeg" alt="Course Image">
+                    </div>
+                    <div class="course-content">
+                        <h3>Intermediate</h3>
+                        <p>Take your skills to the next level with advanced techniques, more complex compositions, and deeper musical understanding.</p>
+                        <div class="course-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i> 10 Weeks
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-user"></i> Group Class
+                            </div>
+                        </div>
+                        <button class="course-btn" onclick="window.location.href='intermediate-level.html'">Know More</button>
+                    </div>
+                </div>
+
+                <div class="course-card fade-up">
+                    <div class="course-image">
+                        <img src="/api/placeholder/400/200" alt="Course Image">
+                    </div>
+                    <div class="course-content">
+                        <h3>Advanced</h3>
+                        <p>Perfect your musical prowess with professional-level techniques, performance mastery, and sophisticated musical expression.</p>
+                        <div class="course-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i> 8 Weeks
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-user"></i> 1-on-1
+                            </div>
+                        </div>
+                        <button class="course-btn" onclick="window.location.href='advanced-level.html'">Know More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work">
+            <div class="section-header fade-up">
+                <h2>Our Work</h2>
+                <p>Explore some of the amazing performances and projects by our students and faculty.</p>
+            </div>
+
+            <div class="work-container">
+                <div class="work-item fade-up">
+                    <div class="work-video">
+                        <iframe width="100%" height="250" src="<iframe width="560" height="315" src="https://www.youtube.com/embed/ryLWcgpOOPI?si=owKWXgmla8zns9QI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>" title="Student Recital 2023" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="work-content">
+                        <h3>Student Recital 2023</h3>
+                        <p>A showcase of our students' progress and talent in a live performance setting.</p>
+                    </div>
+                </div>
+
+                <div class="work-item fade-up">
+                    <div class="work-video">
+                        <iframe width="100%" height="250" src="https://www.youtube.com/embed/jNQXAC9IVRw" title="Collaborative Concert" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="work-content">
+                        <h3>Collaborative Concert</h3>
+                        <p>Our faculty and students performing together in a grand musical event.</p>
+                    </div>
+                </div>
+
+                <div class="work-item fade-up">
+                    <div class="work-video">
+                        <iframe width="100%" height="250" src="https://www.youtube.com/embed/kJQP7kiw5Fk" title="Music Workshop" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="work-content">
+                        <h3>Music Workshop</h3>
+                        <p>Interactive workshops to explore new musical styles and techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <div class="section-header fade-up">
+                <h2>Our Gallery</h2>
+                <p>Take a look at some memorable moments from our music school</p>
+            </div>
+
+            <div class="gallery-container">
+                <div class="gallery-item fade-up">
+                    <img src="images/b1.jpeg" alt="Music Performance">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Live Performance</h3>
+                            <p>Student recital 2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="images/live class.jpeg" alt="Music Workshop">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Music Workshop</h3>
+                            <p>Interactive learning session</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="images/b3.jpeg" alt="Group Performance">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Group Performance</h3>
+                            <p>Annual concert 2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="images/s3.jpeg" alt="Instrument Training">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Instrument Training</h3>
+                            <p>One-on-one sessions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="images/vocal.jpeg" alt="Vocal Training">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Vocal Training</h3>
+                            <p>Voice modulation workshop</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="images/b2.jpeg" alt="Music Theory">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3>Music Theory</h3>
+                            <p>Understanding composition</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Session Form Section -->
+        <section id="session">
+            <div class="section-header fade-up">
+                <h2>Request a Free Session</h2>
+                <p>Book a free trial session and experience our teaching methodology firsthand.</p>
+            </div>
+
+            <div class="form-container fade-up">
+                <form id="session-form" onsubmit="submitForm(event)">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" required min="1" max="100">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="location">Preferred Location</label>
+                            <select id="location" name="location" required>
+                                <option value="">Select Location</option>
+                                <option value="Online">Online</option>
+                                <option value="CBD Belapur">CBD Belapur</option>
+                                <option value="Vashi">Vashi</option>
+        
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Request Free Session</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Success Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <h2>Thank You!</h2>
+                <p>Your session request has been submitted successfully. We will contact you shortly to confirm your free trial session.</p>
+            </div>
+        </div>
+
+        <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 500px;
+            position: relative;
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #666;
+        }
+
+        .work-video {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+        
+        .work-video iframe {
+            display: block;
+        }
+        
+        /* Update existing style to remove unnecessary elements */
+        .work-item .work-image,
+        .work-item .work-overlay,
+        .work-item .play-btn {
+            display: none;
+        }
+        </style>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Aaroha School of Music</h3>
+                <p>Discover your musical potential with our expert guidance and personalized training programs.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#session">Free Session</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>123 Music Lane, Melody City, MC 12345</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>+1 (234) 567-890</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@aarohamusic.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 Aaroha School of Music. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Request Free Session</h3>
+                <div class="close-modal" id="close-modal">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for your interest! We'll contact you shortly to schedule your free session.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // JavaScript for interactivity
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const nav = document.getElementById('nav');
+            const headerCta = document.getElementById('header-cta');
+            const heroCta = document.getElementById('hero-cta');
+            const modal = document.getElementById('modal');
+            const closeModal = document.getElementById('close-modal');
+
+            // Toggle mobile menu
+            mobileMenu.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+
+            // Show modal on CTA click and scroll to form
+            [headerCta, heroCta].forEach(cta => {
+                cta.addEventListener('click', () => {
+                    document.getElementById('session').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Close modal
+            closeModal.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+
+            // Scroll animations
+            const fadeUpElements = document.querySelectorAll('.fade-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeUpElements.forEach(el => observer.observe(el));
+        });
+
+        // Form submission handler
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Create URL-encoded data string
+            const formData = new URLSearchParams({
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                age: document.getElementById('age').value,
+                gender: document.getElementById('gender').value,
+                location: document.getElementById('location').value
+            }).toString();
+            
+            const url = 'https://script.google.com/macros/s/AKfycbxfivvfZBGnRH2R6MS_3Ib4IBbhi4cd0NGFrpjYm6yCYeP7PtKz47hocMPTfTjCnA6L/exec';
+            
+            fetch(url + '?' + formData, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                }
+            })
+            .then(() => {
+                // Show success message
+                document.getElementById('session-form').reset();
+                const modal = document.getElementById('modal');
+                modal.classList.add('active');
+                
+                // Hide modal after 3 seconds
+                setTimeout(() => {
+                    modal.classList.remove('active');
+                }, 3000);
+
+                console.log('Form data sent:', formData); // For debugging
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error submitting form. Please try again.');
+            });
+            
+            return false;
+        }
+    </script>
+
+    <!-- Chatbot -->
+    <div class="chat-button" id="chat-button">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <div class="chatbot" id="chatbot">
+        <div class="chat-header">
+            <h4>Aaroha School of Music</h4>
+            <div class="chat-controls">
+                <button id="minimize-chat"><i class="fas fa-minus"></i></button>
+                <button id="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="chat-body">
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot">
+                    <div class="message-content">
+                        <p>Hello! Welcome to Aaroha School of Music. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button id="send-button"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .chatbot {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1000;
+            background-color: #fff;
+        }
+        
+        .chat-header {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-header h4 {
+            margin: 0;
+            font-size: 16px;
+        }
+        
+        .chat-controls button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-left: 5px;
+            font-size: 14px;
+        }
+        
+        .chat-body {
+            display: flex;
+            flex-direction: column;
+            height: 350px;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            max-width: 80%;
+        }
+        
+        .message.user {
+            align-self: flex-end;
+            align-items: flex-end;
+        }
+        
+        .message.bot {
+            align-self: flex-start;
+            align-items: flex-start;
+        }
+        
+        .message-content {
+            padding: 10px 15px;
+            border-radius: 15px;
+            background-color: #f1f1f1;
+        }
+        
+        .message.user .message-content {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .message-content p {
+            margin: 0;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+        
+        .chat-input button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 999;
+            font-size: 20px;
+        }
+        
+        .chat-button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+
+    <script>
+        // Chatbot functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatButton = document.getElementById('chat-button');
+            const chatbot = document.getElementById('chatbot');
+            const closeChat = document.getElementById('close-chat');
+            const minimizeChat = document.getElementById('minimize-chat');
+            const sendButton = document.getElementById('send-button');
+            const userInput = document.getElementById('user-input');
+            const chatMessages = document.getElementById('chat-messages');
+            
+            // Toggle chatbot visibility
+            chatButton.addEventListener('click', function() {
+                chatbot.style.display = 'block';
+            });
+            
+            closeChat.addEventListener('click', function() {
+                chatbot.style.display = 'none';
+            });
+            
+            minimizeChat.addEventListener('click', function() {
+                chatbot.style.display = 'none';
+            });
+            
+            // Send message function
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+                
+                // Add user message to chat
+                addMessage('user', message);
+                
+                // Clear input
+                userInput.value = '';
+                
+                // Process the message and get response
+                setTimeout(() => {
+                    const response = getBotResponse(message);
+                    addMessage('bot', response);
+                }, 500);
+            }
+            
+            // Add message to chat
+            function addMessage(sender, message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', sender);
+                
+                const messageContent = document.createElement('div');
+                messageContent.classList.add('message-content');
+                
+                const messageText = document.createElement('p');
+                messageText.textContent = message;
+                
+                messageContent.appendChild(messageText);
+                messageDiv.appendChild(messageContent);
+                chatMessages.appendChild(messageDiv);
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Get bot response based on user message
+            function getBotResponse(message) {
+                message = message.toLowerCase();
+                
+                if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+                    return "Hello! How can I help you with your music learning journey today?";
+                }
+                else if (message.includes('course') || message.includes('classes') || message.includes('program')) {
+                    return "We offer various music courses for all levels - Beginner, Intermediate, and Advanced. Each course is designed to build your skills progressively. Which level are you interested in?";
+                }
+                else if (message.includes('beginner')) {
+                    return "Our Beginner course is perfect for those with no prior music experience. It covers the fundamentals of music theory, basic techniques, and simple compositions. Would you like more details about it?";
+                }
+                else if (message.includes('intermediate')) {
+                    return "The Intermediate course is designed for students who have completed our Beginner course or have 1-2 years of experience. It covers advanced techniques, deeper music theory, and more complex compositions.";
+                }
+                else if (message.includes('advanced')) {
+                    return "Our Advanced course is for accomplished musicians looking to refine their skills. It covers sophisticated techniques, comprehensive music theory, composition, and performance at a professional level.";
+                }
+                else if (message.includes('cost') || message.includes('fee') || message.includes('price')) {
+                    return "Our course fees are as follows: Beginner - ₹6,000, Intermediate - ₹8,000, and Advanced - ₹10,000 for a 12-week program. We also offer flexible payment options.";
+                }
+                else if (message.includes('schedule') || message.includes('timing') || message.includes('time')) {
+                    return "We offer flexible schedules with weekday evening classes (5-8 PM) and weekend morning/afternoon sessions. You can choose the timing that works best for you.";
+                }
+                else if (message.includes('location') || message.includes('address') || message.includes('where')) {
+                    return "We're located at 123 Music Avenue, Bangalore. Our facility is equipped with modern amenities and practice rooms for an optimal learning experience.";
+                }
+                else if (message.includes('instrument') || message.includes('instruments')) {
+                    return "We offer training in various instruments including Piano, Guitar, Violin, Drums, Flute, and Vocal training. Which instrument are you interested in?";
+                }
+                else if (message.includes('teacher') || message.includes('faculty') || message.includes('instructor')) {
+                    return "Our faculty consists of experienced musicians and educators with formal training and performance experience. They are passionate about teaching and nurturing musical talent.";
+                }
+                else if (message.includes('contact') || message.includes('phone') || message.includes('email')) {
+                    return "You can reach us at info@aarohamusic.com or call us at +91 9876543210. Our office hours are 9 AM to 6 PM, Monday to Saturday.";
+                }
+                else if (message.includes('thank')) {
+                    return "You're welcome! If you have any more questions, feel free to ask. We're here to help you on your musical journey!";
+                }
+                else {
+                    return "I'm not sure I understand. Could you please rephrase or ask about our courses, schedules, instruments, or contact information?";
+                }
+            }
+            
+            // Event listeners for sending messages
+            sendButton.addEventListener('click', sendMessage);
+            
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>         

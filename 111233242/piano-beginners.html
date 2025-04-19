@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano for Beginners | Aaroha School of Music</title>
+    <link rel="icon" href="logo.jpeg" type="image/icon type">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .course-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('piano-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .course-details {
+            padding: 50px 0;
+        }
+
+        .course-details .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .course-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            gap: 30px;
+        }
+
+        .course-col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .course-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .course-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .course-info h3 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-item i {
+            margin-right: 10px;
+            color: #e74c3c;
+            font-size: 18px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .curriculum {
+            margin-top: 50px;
+        }
+
+        .curriculum h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .week-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .week-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .week-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .week-content {
+            margin-top: 15px;
+            display: none;
+        }
+
+        .week-content.active {
+            display: block;
+        }
+
+        .enroll-section {
+            background-color: #f5f5f5;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .cta-large {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .cta-large:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .instructor {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .instructor-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .instructor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .instructor-info h4 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .instructor-info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <img src="logo.jpeg" alt="Aaroha Logo">
+            <h1> <span>Aaroha School of Music</span></h1>
+        </div>
+        
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#courses" class="active">Courses</a></li>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+            </ul>
+        </nav>
+        
+        <button class="cta-button" id="header-cta">
+            <i class="fas fa-music"></i> Request Free Session
+        </button>
+        
+        <div class="mobile-menu" id="mobile-menu">
+            <i class="session.html"></i>
+        </div>
+    </header>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero">
+        <div class="container">
+            <h1>Piano for Beginners</h1>
+            <p>Start your journey into the beautiful world of piano playing</p>
+        </div>
+    </section>
+
+    <!-- Course Details Section -->
+    <section class="course-details">
+        <div class="container">
+            <div class="course-row">
+                <div class="course-col course-image">
+                    <img src="piano-course.jpg" alt="Piano Course">
+                </div>
+                <div class="course-col course-info">
+                    <h3>Course Overview</h3>
+                    <p>Our Piano for Beginners course is designed to introduce you to the fundamentals of piano playing in a supportive group environment. This course covers basic techniques, essential music theory, and simple pieces to build your confidence and skills from the ground up.</p>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Duration:</strong>
+                            <p>10 Weeks (1 session per week, 90 minutes each)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-user"></i>
+                        <div>
+                            <strong>Class Type:</strong>
+                            <p>Small group classes (4-6 students)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <strong>Skill Level:</strong>
+                            <p>No prior experience needed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-music"></i>
+                        <div>
+                            <strong>Instruments:</strong>
+                            <p>Digital pianos provided during in-person classes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Locations:</strong>
+                            <p>Online, CBD Belapur, or Vashi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instructor">
+                        <div class="instructor-image">
+                            <img src="anurag.jpg" alt="Instructor">
+                        </div>
+                        <div class="instructor-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Piano Instructor</p>
+                            <p>Classically trained pianist with over 8 years of teaching experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="curriculum">
+                <h3>Course Curriculum</h3>
+                
+                <div class="week-item">
+                    <div class="week-header">
+                        <h4>Week 1-2: Introduction to Piano</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="week-content">
+                        <ul>
+                            <li>Understanding the piano keyboard layout</li>
+                            <li>Proper sitting posture and hand position</li>
+                            <li>Basic finger exercises</li>
+                            <li>Introduction to music notation</li>
+                            <li>Playing simple 5-finger patterns</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="week-item">
+                    <div class="week-header">
+                        <h4>Week 3-4: Reading Music and Basic Theory</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="week-content">
+                        <ul>
+                            <li>Reading notes on the treble and bass clefs</li>
+                            <li>Understanding rhythm and time signatures</li>
+                            <li>Basic music theory concepts</li>
+                            <li>Introduction to major scales (C, G major)</li>
+                            <li>Simple two-hand coordination exercises</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="week-item">
+                    <div class="week-header">
+                        <h4>Week 5-6: Chords and Simple Songs</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="week-content">
+                        <ul>
+                            <li>Introduction to basic chords</li>
+                            <li>Playing melodies with simple left-hand accompaniment</li>
+                            <li>Learning easy, recognizable songs</li>
+                            <li>Developing dynamic control (soft vs. loud playing)</li>
+                            <li>Introduction to pedaling techniques</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="week-item">
+                    <div class="week-header">
+                        <h4>Week 7-8: More Complex Pieces</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="week-content">
+                        <ul>
+                            <li>Introduction to minor scales</li>
+                            <li>Playing pieces with more complex rhythms</li>
+                            <li>Developing independence between hands</li>
+                            <li>Playing duets with other students</li>
+                            <li>Sight-reading exercises</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="week-item">
+                    <div class="week-header">
+                        <h4>Week 9-10: Performance Preparation</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="week-content">
+                        <ul>
+                            <li>Polishing selected pieces for performance</li>
+                            <li>Addressing technical challenges</li>
+                            <li>Performance techniques and managing nerves</li>
+                            <li>Mini-recital with peers</li>
+                            <li>Next steps in your piano journey</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-row">
+                <div class="feature-item">
+                    <i class="fas fa-book"></i>
+                    <h3>Learning Materials</h3>
+                    <p>All students receive a comprehensive piano method book and supplementary materials included in the course fee.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-music"></i>
+                    <h3>Practice Access</h3>
+                    <p>Students can book practice time on our pianos outside of class hours at no additional cost.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Certificate</h3>
+                    <p>Receive a certificate of completion at the end of the course to mark your progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enroll Section -->
+    <section class="enroll-section">
+        <div class="container">
+            <h2>Begin Your Piano Journey Today</h2>
+            <p>Join our supportive community of piano learners and discover the joy of making music!</p>
+            <button class="cta-large" onclick="window.location.href='index.html#session'">Request Free Trial Session</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Aaroha School of Music</h3>
+                <p>Discover your musical potential with our expert guidance and personalized training programs.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#courses">Courses</a></li>
+                    <li><a href="index.html#work">Work</a></li>
+                    <li><a href="index.html#session">Free Session</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>123 Music Lane, Melody City, MC 12345</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>+1 (234) 567-890</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@aarohamusic.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 Aaroha School of Music. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const nav = document.getElementById('nav');
+            const headerCta = document.getElementById('header-cta');
+            
+            // Toggle mobile menu
+            mobileMenu.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+            
+            // Scroll to session form
+            headerCta.addEventListener('click', () => {
+                window.location.href = 'index.html#session';
+            });
+            
+            // Week items toggle
+            const weekHeaders = document.querySelectorAll('.week-header');
+            weekHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    content.classList.toggle('active');
+                    
+                    const icon = header.querySelector('i');
+                    if (content.classList.contains('active')) {
+                        icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                    } else {
+                        icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

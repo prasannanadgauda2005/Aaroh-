@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermediate Level | Aaroha School of Music</title>
+    <link rel="icon" href="logo.jpeg" type="image/icon type">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .course-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('intermediate-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .course-details {
+            padding: 50px 0;
+        }
+
+        .course-details .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .course-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            gap: 30px;
+        }
+
+        .course-col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .course-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .course-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .course-info h3 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-item i {
+            margin-right: 10px;
+            color: #e74c3c;
+            font-size: 18px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .curriculum {
+            margin-top: 50px;
+        }
+
+        .curriculum h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .week-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .week-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .week-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .week-content {
+            margin-top: 15px;
+            display: none;
+        }
+
+        .week-content.active {
+            display: block;
+        }
+
+        .enroll-section {
+            background-color: #f5f5f5;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .cta-large {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .cta-large:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .instructor {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .instructor-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .instructor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .instructor-info h4 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .instructor-info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .features-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 250px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-item i {
+            font-size: 36px;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-item p {
+            color: #666;
+        }
+
+        /* Chatbot Styles */
+        #chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--purple), #9b59b6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: sparkle 2s infinite;
+        }
+        
+        #chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+        }
+        
+        #chatbot {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 450px;
+            background-color: white;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        
+        .chat-header {
+            background: linear-gradient(45deg, var(--purple), #9b59b6);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            overflow: hidden;
+        }
+        
+        #chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 15px;
+            padding-right: 5px;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        
+        .user-message {
+            margin-left: auto;
+            background-color: #f1f1f1;
+            padding: 10px 15px;
+            border-radius: 15px 15px 0 15px;
+            color: #333;
+        }
+        
+        .bot-message {
+            margin-right: auto;
+            background: linear-gradient(45deg, var(--purple), #9b59b6);
+            padding: 10px 15px;
+            border-radius: 15px 15px 15px 0;
+            color: white;
+        }
+        
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+        
+        .chat-input input:focus {
+            border-color: var(--purple);
+        }
+        
+        .chat-input button {
+            background: linear-gradient(45deg, var(--purple), #9b59b6);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(138, 43, 226, 0.3);
+        }
+        
+        .chat-input button:hover {
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="fixed-top bg-white shadow-sm">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light py-2">
+                <div class="navbar-brand d-flex align-items-center">
+                    <img src="logo.jpeg" alt="Aaroha Logo" height="50" class="me-2">
+                    <h1 class="m-0 fs-4 fw-semibold"> <span class="text-golden">Aaroha School of Music</span></h1>
+                </div>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="index.html#about">About</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" href="index.html#courses">Courses</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="index.html#work">Work</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="index.html#gallery">Gallery</a>
+                        </li>
+                    </ul>
+                    
+                    <button class="cta-button ms-lg-3" id="header-cta">
+                        <i class="fas fa-music"></i> Request Free Session
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero" style="margin-top: 76px;">
+        <div class="container py-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 text-white mb-3">Intermediate Level</h1>
+                    <p class="lead text-white">Take your musical skills to the next level with advanced techniques and deeper understanding</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Details Section -->
+    <section class="course-details py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <div class="course-image rounded overflow-hidden shadow">
+                        <img src="intermediate-course.jpg" alt="Intermediate Course" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="course-info">
+                        <h3 class="mb-3">Course Overview</h3>
+                        <p>Our Intermediate Level course is designed for musicians who have already mastered the basics and are ready to advance their skills. This program focuses on developing more complex techniques, deeper musical theory understanding, and enhanced performance capabilities.</p>
+                        
+                        <div class="info-item d-flex align-items-start mb-3">
+                            <i class="fas fa-clock text-danger me-2 mt-1"></i>
+                            <div>
+                                <strong>Duration:</strong>
+                                <p class="mb-0">10 Weeks (1 session per week, 90 minutes each)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item d-flex align-items-start mb-3">
+                            <i class="fas fa-user text-danger me-2 mt-1"></i>
+                            <div>
+                                <strong>Class Type:</strong>
+                                <p class="mb-0">Small group classes (4-6 students)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item d-flex align-items-start mb-3">
+                            <i class="fas fa-graduation-cap text-danger me-2 mt-1"></i>
+                            <div>
+                                <strong>Skill Level:</strong>
+                                <p class="mb-0">Prior experience required (at least 6-12 months of consistent practice)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item d-flex align-items-start mb-3">
+                            <i class="fas fa-music text-danger me-2 mt-1"></i>
+                            <div>
+                                <strong>Instruments:</strong>
+                                <p class="mb-0">Guitar, Piano, Vocals, or continue with your primary instrument</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item d-flex align-items-start mb-3">
+                            <i class="fas fa-map-marker-alt text-danger me-2 mt-1"></i>
+                            <div>
+                                <strong>Locations:</strong>
+                                <p class="mb-0">Online, CBD Belapur, or Vashi</p>
+                            </div>
+                        </div>
+                        
+                        <div class="instructor d-flex align-items-center mt-4 p-3 bg-light rounded shadow-sm">
+                            <div class="instructor-image rounded-circle overflow-hidden me-3" style="width: 100px; height: 100px;">
+                                <img src="anurag.jpg" alt="Instructor" class="img-fluid">
+                            </div>
+                            <div class="instructor-info">
+                                <h4 class="mb-1">Priya Sharma</h4>
+                                <p class="mb-1 text-muted">Senior Music Instructor</p>
+                                <p class="mb-0">Experienced performer with expertise in multiple instruments and advanced theory</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="curriculum mt-5">
+                <h3 class="mb-4">Course Curriculum</h3>
+                
+                <div class="accordion" id="curriculumAccordion">
+                    <div class="accordion-item mb-3 border rounded shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week1-2" aria-expanded="false" aria-controls="week1-2">
+                                Week 1-2: Advanced Techniques
+                            </button>
+                        </h2>
+                        <div id="week1-2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-transparent">Instrument-specific advanced techniques</li>
+                                    <li class="list-group-item bg-transparent">Developing speed, accuracy, and dexterity</li>
+                                    <li class="list-group-item bg-transparent">Nuanced tone production and control</li>
+                                    <li class="list-group-item bg-transparent">Advanced music notation and sight-reading</li>
+                                    <li class="list-group-item bg-transparent">Technical exercises for skill enhancement</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border rounded shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week3-4" aria-expanded="false" aria-controls="week3-4">
+                                Week 3-4: Intermediate Music Theory
+                            </button>
+                        </h2>
+                        <div id="week3-4" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-transparent">Advanced scales and modes</li>
+                                    <li class="list-group-item bg-transparent">Complex chord structures and progressions</li>
+                                    <li class="list-group-item bg-transparent">Key modulations and transitions</li>
+                                    <li class="list-group-item bg-transparent">Harmonic analysis of music pieces</li>
+                                    <li class="list-group-item bg-transparent">Form and structure in musical composition</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border rounded shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week5-6" aria-expanded="false" aria-controls="week5-6">
+                                Week 5-6: Stylistic Development
+                            </button>
+                        </h2>
+                        <div id="week5-6" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-transparent">Exploration of various musical genres</li>
+                                    <li class="list-group-item bg-transparent">Style-specific techniques and approaches</li>
+                                    <li class="list-group-item bg-transparent">Ornamentation and expressive devices</li>
+                                    <li class="list-group-item bg-transparent">Authentic interpretation of different music styles</li>
+                                    <li class="list-group-item bg-transparent">Developing your unique musical voice</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border rounded shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week7-8" aria-expanded="false" aria-controls="week7-8">
+                                Week 7-8: Ensemble Skills
+                            </button>
+                        </h2>
+                        <div id="week7-8" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-transparent">Playing/performing with others</li>
+                                    <li class="list-group-item bg-transparent">Rhythm section techniques</li>
+                                    <li class="list-group-item bg-transparent">Accompaniment approaches</li>
+                                    <li class="list-group-item bg-transparent">Collaborative improvisation</li>
+                                    <li class="list-group-item bg-transparent">Group dynamics and communication</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border rounded shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week9-10" aria-expanded="false" aria-controls="week9-10">
+                                Week 9-10: Performance & Recording
+                            </button>
+                        </h2>
+                        <div id="week9-10" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-transparent">Intermediate performance techniques</li>
+                                    <li class="list-group-item bg-transparent">Preparing a diverse repertoire</li>
+                                    <li class="list-group-item bg-transparent">Managing performance anxiety</li>
+                                    <li class="list-group-item bg-transparent">Introduction to basic recording techniques</li>
+                                    <li class="list-group-item bg-transparent">Culminating performance preparation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features py-5 bg-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4 feature-item">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-users fa-3x text-danger"></i>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h4 mb-3">Collaborative Learning</h3>
+                            <p class="card-text">Develop ensemble skills by working with other musicians at your level in small group settings.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4 feature-item">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-microphone-alt fa-3x text-danger"></i>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h4 mb-3">Performance Opportunities</h3>
+                            <p class="card-text">Participate in student showcases and performances to gain valuable stage experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4 feature-item">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-headphones fa-3x text-danger"></i>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title h4 mb-3">Recording Session</h3>
+                            <p class="card-text">Experience a basic recording session to learn about the studio environment and techniques.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enroll Section -->
+    <section class="enroll-section py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-3">Ready to Advance Your Musical Skills?</h2>
+                    <p class="lead mb-4">Join our intermediate program and take your musicianship to new heights!</p>
+                    <button class="btn btn-danger btn-lg px-4 py-2 rounded-pill" onclick="window.location.href='index.html#session'">
+                        <i class="fas fa-music me-2"></i> Request Free Trial Session
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="h5 mb-3">Aaroha School of Music</h3>
+                    <p class="text-muted mb-3">Discover your musical potential with our expert guidance and personalized training programs.</p>
+                    <div class="social-icons d-flex gap-2">
+                        <a href="#" class="social-icon d-flex justify-content-center align-items-center bg-secondary bg-opacity-25 rounded-circle" style="width: 40px; height: 40px;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon d-flex justify-content-center align-items-center bg-secondary bg-opacity-25 rounded-circle" style="width: 40px; height: 40px;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon d-flex justify-content-center align-items-center bg-secondary bg-opacity-25 rounded-circle" style="width: 40px; height: 40px;">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-icon d-flex justify-content-center align-items-center bg-secondary bg-opacity-25 rounded-circle" style="width: 40px; height: 40px;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="h5 mb-3">Quick Links</h3>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a href="index.html#home" class="text-decoration-none text-muted">Home</a></li>
+                        <li class="mb-2"><a href="index.html#about" class="text-decoration-none text-muted">About</a></li>
+                        <li class="mb-2"><a href="index.html#courses" class="text-decoration-none text-muted">Courses</a></li>
+                        <li class="mb-2"><a href="index.html#work" class="text-decoration-none text-muted">Work</a></li>
+                        <li class="mb-2"><a href="index.html#session" class="text-decoration-none text-muted">Free Session</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-5 col-md-12">
+                    <h3 class="h5 mb-3">Contact Us</h3>
+                    <div class="mb-2 d-flex">
+                        <div class="me-3 d-flex justify-content-center align-items-center bg-secondary bg-opacity-25 rounded-circle" style="width: 35px; height: 35px;">
+                            <i class="fas fa-map-marker-alt text-danger"></i>
+                        </div>
+                        <p class="mb-0 text-muted">123 Music Lane, Melody City, MC 12345</p>
+                    </div>
+                    <div class="mb-2 d-flex">
+                        <div class="me-3 d-flex justify-content-center align-items-center bg-secondary bg-opacity-25 rounded-circle" style="width: 35px; height: 35px;">
+                            <i class="fas fa-phone-alt text-danger"></i>
+                        </div>
+                        <p class="mb-0 text-muted">+1 (234) 567-890</p>
+                    </div>
+                    <div class="mb-2 d-flex">
+                        <div class="me-3 d-flex justify-content-center align-items-center bg-secondary bg-opacity-25 rounded-circle" style="width: 35px; height: 35px;">
+                            <i class="fas fa-envelope text-danger"></i>
+                        </div>
+                        <p class="mb-0 text-muted">info@aarohamusic.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary mt-4 py-3">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2023 Aaroha School of Music. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const nav = document.getElementById('nav');
+            const headerCta = document.getElementById('header-cta');
+            
+            // Toggle mobile menu
+            mobileMenu.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+            
+            // Scroll to session form
+            headerCta.addEventListener('click', () => {
+                window.location.href = 'index.html#session';
+            });
+        });
+    </script>
+
+    <!-- Chatbot -->
+    <div id="chatbot">
+        <div class="chat-header">
+            <h3><i class="fas fa-music"></i> Aaroha Music Assistant</h3>
+            <div class="chat-controls">
+                <button id="minimize-chat"><i class="fas fa-minus"></i></button>
+                <button id="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="chat-body">
+            <div id="chat-messages">
+                <!-- Messages will be added here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input" placeholder="Type your question..." autocomplete="off">
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="chat-button">
+        <i class="fas fa-music"></i>
+    </div>
+
+    <!-- Chatbot JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatButton = document.getElementById('chat-button');
+            const chatbot = document.getElementById('chatbot');
+            const minimizeBtn = document.getElementById('minimize-chat');
+            const closeBtn = document.getElementById('close-chat');
+            const chatInput = document.getElementById('chat-input');
+            const sendBtn = document.getElementById('send-btn');
+            const chatMessages = document.getElementById('chat-messages');
+            
+            let isChatOpen = false;
+            let isMinimized = false;
+            
+            // Toggle chat visibility when chat button is clicked
+            chatButton.addEventListener('click', toggleChat);
+            
+            // Minimize chat
+            minimizeBtn.addEventListener('click', toggleMinimize);
+            
+            // Close chat
+            closeBtn.addEventListener('click', closeChat);
+            
+            // Send message on button click
+            sendBtn.addEventListener('click', sendMessage);
+            
+            // Send message on pressing Enter
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // Show initial greeting
+            setTimeout(() => {
+                addBotMessage("Hello! Welcome to Aaroha School of Music. How can I help you with our Intermediate Level course?");
+            }, 500);
+            
+            function toggleChat() {
+                if (isChatOpen && !isMinimized) {
+                    chatbot.style.display = 'none';
+                    isChatOpen = false;
+                } else if (!isChatOpen) {
+                    chatbot.style.display = 'flex';
+                    chatInput.focus();
+                    isChatOpen = true;
+                    isMinimized = false;
+                } else if (isMinimized) {
+                    chatbot.style.height = '450px';
+                    isMinimized = false;
+                }
+            }
+            
+            function toggleMinimize() {
+                if (!isMinimized) {
+                    chatbot.style.height = '60px';
+                    isMinimized = true;
+                } else {
+                    chatbot.style.height = '450px';
+                    isMinimized = false;
+                }
+            }
+            
+            function closeChat() {
+                chatbot.style.display = 'none';
+                isChatOpen = false;
+                isMinimized = false;
+            }
+            
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message !== '') {
+                    addUserMessage(message);
+                    chatInput.value = '';
+                    
+                    // Process the message and get response
+                    setTimeout(() => {
+                        const response = getBotResponse(message);
+                        addBotMessage(response);
+                    }, 500);
+                }
+            }
+            
+            function addUserMessage(message) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message', 'user-message');
+                messageElement.textContent = message;
+                chatMessages.appendChild(messageElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            function addBotMessage(message) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message', 'bot-message');
+                messageElement.textContent = message;
+                chatMessages.appendChild(messageElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            function getBotResponse(message) {
+                // Convert message to lowercase for easier matching
+                const msg = message.toLowerCase();
+                
+                // Check for specific keywords and return appropriate responses
+                if (msg.includes('prerequisite') || msg.includes('requirements') || (msg.includes('how') && msg.includes('join'))) {
+                    return "To join our Intermediate course, you should have completed our Beginner course or have 1-2 years of musical experience.";
+                } 
+                else if (msg.includes('cost') || msg.includes('fee') || msg.includes('price') || msg.includes('money')) {
+                    return "The Intermediate course is priced at ₹8,000 for the full 12-week program.";
+                }
+                else if (msg.includes('schedule') || msg.includes('timing') || msg.includes('time') || msg.includes('days')) {
+                    return "Intermediate classes are scheduled on weekday evenings (5-8 PM) and weekend mornings/afternoons.";
+                }
+                else if (msg.includes('curriculum') || msg.includes('syllabus') || msg.includes('learn') || msg.includes('taught')) {
+                    return "The Intermediate curriculum includes advanced techniques, deeper music theory, ear training, improvisation basics, performance skills, ensemble playing, and more complex compositions appropriate to your instrument.";
+                }
+                else if (msg.includes('duration') || msg.includes('weeks') || msg.includes('long') || msg.includes('length')) {
+                    return "The Intermediate course runs for 12 weeks with 2 sessions per week.";
+                }
+                else if (msg.includes('instrument') || msg.includes('instruments')) {
+                    return "Our Intermediate courses are available for all instruments including guitar, piano, tabla, sitar, flute, violin, and vocals.";
+                }
+                else if (msg.includes('teacher') || msg.includes('instructor') || msg.includes('faculty')) {
+                    return "Our Intermediate courses are taught by experienced faculty members who are professional musicians with at least 10 years of experience.";
+                }
+                else if (msg.includes('certificate') || msg.includes('certification')) {
+                    return "Yes, upon successful completion of the Intermediate course, you will receive an Aaroha School of Music certification.";
+                }
+                else if (msg.includes('register') || msg.includes('enroll') || msg.includes('sign up') || msg.includes('join')) {
+                    return "You can register for our Intermediate course by visiting our center, calling us at +91 98765 43210, or filling the contact form on our website.";
+                }
+                else if (msg.includes('advanced') || msg.includes('next level')) {
+                    return "After completing the Intermediate course, you can progress to our Advanced level programs which focus on professional-level skills.";
+                }
+                else if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+                    return "Hello! How can I help you with information about our Intermediate Level music course?";
+                }
+                else if (msg.includes('thank')) {
+                    return "You're welcome! Feel free to ask if you have any other questions about our Intermediate course.";
+                }
+                else if (msg.includes('location') || msg.includes('address') || msg.includes('where')) {
+                    return "Our Intermediate classes are conducted at our main center in Koramangala, Bangalore. We also offer online options for students who cannot attend in person.";
+                }
+                else if (msg.includes('material') || msg.includes('book') || msg.includes('equipment')) {
+                    return "All necessary learning materials are provided as part of the course fee. You should bring your own instrument (except for piano/tabla/drums which are available at our center).";
+                }
+                else if (msg.includes('age') || msg.includes('old')) {
+                    return "Our Intermediate courses are suitable for students age 12 and above. We also have special intermediate programs designed specifically for adults.";
+                }
+                else if (msg.includes('exam') || msg.includes('test') || msg.includes('assessment')) {
+                    return "The Intermediate course includes mid-term and final assessments, including a short performance to showcase your skills.";
+                }
+                else if (msg.includes('practice') || msg.includes('practicing')) {
+                    return "For optimal progress in the Intermediate course, we recommend practicing at least 45-60 minutes daily, 5-6 days a week.";
+                }
+                // Default response if no keywords match
+                else {
+                    return "I'm here to help with any questions about our Intermediate Level course. You can ask about prerequisites, curriculum, fees, schedule, or anything else you'd like to know!";
+                }
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
